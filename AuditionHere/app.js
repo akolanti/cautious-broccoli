@@ -3,11 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('../AuditionHere/model/db');
+require('../AuditionHere/model/actorDataModel');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const apiRouter = require('../AuditionHere/app_api/Routes/actorRouter');
 
-require('../AuditionHere/model/db');
+
 var app = express();
 
 // view engine setup
@@ -22,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api',apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
