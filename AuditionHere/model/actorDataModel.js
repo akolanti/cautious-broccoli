@@ -33,7 +33,7 @@ var actorDataSchema= new mongoose.Schema({
     },
     actorWeight:{
         type:Number,
-        minlength:3,
+        minlength:2,
         required:[true]
 
     },
