@@ -1,1 +1,1 @@
-# a repo of experiments
+#omae wa shindeiru
