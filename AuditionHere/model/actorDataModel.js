@@ -5,12 +5,14 @@ var actorDataSchema= new mongoose.Schema({
         type:String,
         required:[true],
         minlength:6,
-        validate:{
-            validator:function(v){
-            return /^\S+@\S+\.\S+$/.test(v);
-            },
-            message: props => `${props.value} is not a valid email!`
-        }
+       
+        unique:true
+    },
+    password:{
+        type:String,
+        required:[true],
+        minlength:6,
+        maxlength:1024
     },
 
     firstName:{
