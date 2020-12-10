@@ -1,1 +1,75 @@
-<p>registration works!</p>
+
+<div class="wrapper fadeInDown">
+
+    <div id="formContent"><form>
+        <!-- <form [formGroup]="ngForm"  (ngSubmit)="onClickSubmit(ngForm.value)" novalidate> -->
+            <!-- <h5>Enter the following details</h5>
+            <div class="form-group">
+            <label>Username:</label>
+		    <input (keyup)="set_show()" type="text" id="login"  formControlName="email" class="fadeIn second" name="email" placeholder="Email Address / Username"  >
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                </div>
+            <div class="form-group">
+                <label>Re-enter your password:</label>
+                    <input (keyup)="set_show()" type="password" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+            </div>
+            <div class="form-group">
+                <label>First Name:</label>
+                <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                </div>
+            <div class="form-group">
+                    <label>Last Name:</label>
+                    <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                    </div>
+                   
+                
+                        <div class="form-group">
+                            <label> Height(cm) :</label>
+                            <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                            </div>
+                        <div class="form-group">
+                                <label> Weight(kg/lb) :</label>
+                                <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                                </div>
+                        <div class="form-group">
+                                    <label> Eye Color:</label>
+                                    <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                        </div>
+                        <div class="form-group">
+                            <label> Ethinicity:</label>
+                            <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                            </div>
+                        <div class="form-group">
+                                <label> Date of Birth:</label>
+                                <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                                </div>
+                        <div class="form-group">
+                                    <label> Ethinicity:</label>
+                                    <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                                    </div>
+        
+                        <div class="form-group">
+                                        <label> Skills :</label>
+                                        <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                                        </div>
+                         <div class="form-group">
+                                    <label> Profile Image</label>
+                                <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
+                                </div>               
+                        -->
+
+                          <mat-form-field appearance="fill">
+                            <mat-label>Birth Date</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+       
+                    </form>
+
+    </div>
+
+</div>

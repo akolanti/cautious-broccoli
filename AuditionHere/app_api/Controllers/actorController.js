@@ -51,7 +51,7 @@ const getSingleActor = function(req,res){
 if (!actorData) {
     res
     .status(404)
-    .json({"message":"data not found"});
+    .json({"message":"actor doesn't exist"});
 return;
 } 
 else if (err) {
