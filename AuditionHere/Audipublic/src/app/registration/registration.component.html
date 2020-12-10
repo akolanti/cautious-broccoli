@@ -1,9 +1,9 @@
 
 <div class="wrapper fadeInDown">
 
-    <div id="formContent"><form>
-        <!-- <form [formGroup]="ngForm"  (ngSubmit)="onClickSubmit(ngForm.value)" novalidate> -->
-            <!-- <h5>Enter the following details</h5>
+    <div id="formContent">
+         <form [formGroup]="ngForm"  (ngSubmit)="onClickSubmit(ngForm.value)" novalidate>
+            <h5>Enter the following details</h5>
             <div class="form-group">
             <label>Username:</label>
 		    <input (keyup)="set_show()" type="text" id="login"  formControlName="email" class="fadeIn second" name="email" placeholder="Email Address / Username"  >
@@ -15,7 +15,8 @@
             <div class="form-group">
                 <label>Re-enter your password:</label>
                     <input (keyup)="set_show()" type="password" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
-            </div>
+            </div> 
+            <!-- 
             <div class="form-group">
                 <label>First Name:</label>
                 <input (keyup)="set_show()" type="text" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
@@ -67,6 +68,13 @@
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                           </mat-form-field>
+
+
+
+                          <button type="button" (click)="fileInput.click()">
+                            <span>Upload</span>
+                            <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" />
+                          </button>
        
                     </form>
 

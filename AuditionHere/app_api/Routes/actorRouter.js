@@ -9,6 +9,6 @@ router.post('/register',ctrlActor.newActor);
 router.get('/actors/:actorid',ctrlActor.getSingleActor);
 router.put('/actors/:actorid',ctrlActor.updateActor);
 router.delete('/actors/:actorid',ctrlActor.deleteActor);
-
+router.post('/login',ctrlActor.login);
 
 module.exports=router;
