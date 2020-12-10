@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 const ActorDataInstance= mongoose.model('ActorData');
+const bcrypt=require('bcrypt');
 
 const getActors= function(req,res,next){
     ActorDataInstance.find().exec(
@@ -17,11 +18,39 @@ const getActors= function(req,res,next){
     );
 };
 
+const login =  function(req,res,next)
+{
+    
+   
+        ActorDataInstance.findOne({userName:req.body.userName})
+    .exec(function(err, actorData) {
+    if (!actorData) {
+        res
+        .status(404)
+        .json({"message":"data not found"});
+    return;
+    } 
+    else if (err) {
+        res
+        .status(404)
+        .json(err);
+        return;
+        }
+        res
+        .status(200)
+        .json(actorData);
+    });
+  
+};
 
 const newActor=function(req,res,next){
+    const salt= bcrypt.genSalt(10);
+    const hashed= bcrypt.hash(req.body.password,salt);
+
     ActorDataInstance.create({
         userName:req.body.userName,
         firstName:req.body.firstName,
+        password:hashed,
         lastName:req.body.lastName,
         actorHeight:req.body.actorHeight,
         actorWeight:req.body.actorWeight,
@@ -151,4 +180,4 @@ const deleteActor=function(req,res,next){
 
 };
 
-module.exports={getActors,newActor,updateActor,getSingleActor,deleteActor};
+module.exports={getActors,newActor,updateActor,getSingleActor,deleteActor,login};
