@@ -1,6 +1,7 @@
 export class Actordata {
     _id: String;
     userName:String;
+    password:String;
         firstName:String;
         lastName:String;
         actorHeight:Number;

@@ -21,6 +21,7 @@ export class RegistrationComponent implements OnInit {
  public newActor:Actordata={
   _id: '',
   userName:'',
+  password:'',
   firstName:'',
   lastName:'',
   actorHeight:0,
@@ -44,7 +45,7 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() 
     {
-      this.createForm();
+     this.createForm();
       }
       createForm() {
         this.ngForm = this.formBuilder.group({
@@ -55,13 +56,15 @@ export class RegistrationComponent implements OnInit {
               Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
             ]
           ],
-          password: ["", [Validators.required]]
+          password: ["", [Validators.required]],
+          generic: ["", [Validators.required]]
         });
       }
   private formIsValid(): boolean { 
   
   if (this.newActor.userName && 
     this.newActor.firstName  && 
+    this.newActor.password  && 
     this.newActor.lastName  
     && this.newActor.actorHeight 
     &&  this.newActor.actorWeight
@@ -75,6 +78,9 @@ export class RegistrationComponent implements OnInit {
       return false;
     }
   }
+
+
+
 
   //@Input()
   validation:Function
