@@ -44,13 +44,15 @@ const login =  function(req,res,next)
 };
 
 const newActor=function(req,res,next){
+    
     const salt= bcrypt.genSalt(10);
     const hashed= bcrypt.hash(req.body.password,salt);
+    
 
     ActorDataInstance.create({
         userName:req.body.userName,
         firstName:req.body.firstName,
-        password:hashed,
+        password:req.body.password,
         lastName:req.body.lastName,
         actorHeight:req.body.actorHeight,
         actorWeight:req.body.actorWeight,
