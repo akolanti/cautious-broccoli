@@ -14,14 +14,14 @@
 		<form [formGroup]="ngForm"  (ngSubmit)="onClickSubmit(ngForm.value)" novalidate>
 		  <h5>Sign In </h5>
 		  <div class="form-group">
-		    <input (keyup)="set_show()" type="text" id="login"  formControlName="email" class="fadeIn second" name="email" placeholder="Email Address / Username"  >
+		    <input (keyup)="set_show()" type="email" id="login"  formControlName="userName" class="fadeIn second" name="userName" placeholder="userName Address / Username"  >
 			</div>
-			<div *ngIf="ngForm.controls['email'].invalid && (ngForm.controls['email'].dirty || ngForm.controls['email'].touched)" class="alert alert-danger">
-				<div *ngIf="ngForm.controls['email'].errors.required">
-					 Email is required.
+			<div *ngIf="ngForm.controls['userName'].invalid && (ngForm.controls['userName'].dirty || ngForm.controls['userName'].touched)" class="alert alert-danger">
+				<div *ngIf="ngForm.controls['userName'].errors.required">
+					 userName is required.
 				</div>
-				<div *ngIf="ngForm.controls['email'].errors.pattern">
-					Email is not a valid format.
+				<div *ngIf="ngForm.controls['userName'].errors.pattern">
+					userName is not a valid format.
 			 </div>
 			</div>
 		  <div class="form-group">

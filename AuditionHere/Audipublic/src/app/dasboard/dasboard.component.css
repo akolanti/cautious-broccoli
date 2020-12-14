@@ -1,0 +1,24 @@
+/* table {
+    width:80%;
+    margin:Auto;
+    
+} */
+.dashboard{
+    width:80%;
+    margin:
+    auto;
+    
+}
+/* .add-btn
+{
+    text-align:"center";
+    margin-left:200px;
+    margin-bottom: 20px;;
+    
+} */
+input 
+{
+    float: right;
+    margin:50px;
+    display: inline-block;
+}

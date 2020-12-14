@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   ngForm: FormGroup;
   public show = false;
   public keep_login = false;
-
+  public loginuserdata:{};
   constructor(    private router: Router,
     private formBuilder: FormBuilder,
     private Login: LoginService,
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
   createForm() {
     this.ngForm = this.formBuilder.group({
-      email: [
+      userName: [
         "",
         [
           Validators.required,
@@ -40,24 +40,23 @@ export class LoginComponent implements OnInit {
     });
   }
   onClickSubmit(data) {
-    // alert("Entered Email id : " + data.email);
-    //  alert("Entered Email id : " + data.password);
-    let email = data.email;
-    let password = data.password;
-
-    this.Login.postlogin(email, password).subscribe(
+    console.log(data.password);
+    this.Login.postlogin(data).subscribe(
       res => {
-        
-     
-        if (this.keep_login) {
-          localStorage.setItem("access_token", res["access_token"]);
-        } else {
-          sessionStorage.setItem("access_token", res["access_token"]);
-        }
-       
-       
-        this.router.navigate(["/Dashboard"]);
-      
+       if(res['data']['password']==data.password)
+       {
+          console.log(res['token']);
+         //  this.router.navigate(["/dashboard"]);
+            if (this.keep_login) {
+                localStorage.setItem("access_token", res["token"]);
+              } else {
+                sessionStorage.setItem("access_token", res["token"]);
+              }
+       }
+       else{
+        this.show = !this.show;
+       }
+
       },
       error => {
         this.show = !this.show;

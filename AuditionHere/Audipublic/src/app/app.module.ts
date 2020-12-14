@@ -11,12 +11,18 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RegistrationComponent } from './registration/registration.component';
 import { FrameworkComponent } from './framework/framework.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DasboardComponent } from './dasboard/dasboard.component';
+import { HomeComponent } from './home/home.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    FrameworkComponent
+    FrameworkComponent,
+    DasboardComponent,
+    HomeComponent,
+    DetailsPageComponent
     
   ],
   imports: [
@@ -24,8 +30,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,MatDatepickerModule,MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([{path: '',component: LoginComponent},{path: 'register',component: RegistrationComponent},
-  {path: '',redirectTo:'/register',pathMatch:"full"}]),
+    RouterModule.forRoot([
+      {path: 'login',component: LoginComponent},
+      {path: 'register',component: RegistrationComponent},
+      {path: '',redirectTo:'/login',pathMatch:"full"},
+      {path: 'dashboard',component: DasboardComponent},
+      {path: 'home',component: HomeComponent},
+      {path: 'details',component: DetailsPageComponent},
+
+
+
+    ]),
     BrowserAnimationsModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],

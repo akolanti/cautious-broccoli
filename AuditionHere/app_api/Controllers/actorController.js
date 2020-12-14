@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 const ActorDataInstance= mongoose.model('ActorData');
 const bcrypt=require('bcrypt');
-
+const jwt=require('jsonwebtoken');
+const token = '';
 const getActors= function(req,res,next){
     ActorDataInstance.find().exec(
         function(err,actorData){
@@ -11,8 +12,11 @@ const getActors= function(req,res,next){
                 .json(err)
                 return;
             }
-            console.log(actorData);
-            res.status(200).json(actorData);
+            else{
+                  
+                res.status(200).json(actorData);
+
+            }
 
         }
     );
@@ -21,8 +25,7 @@ const getActors= function(req,res,next){
 const login =  function(req,res,next)
 {
     
-   
-        ActorDataInstance.findOne({userName:req.body.userName})
+    ActorDataInstance.findOne({userName:req.body.userName})
     .exec(function(err, actorData) {
     if (!actorData) {
         res
@@ -36,9 +39,11 @@ const login =  function(req,res,next)
         .json(err);
         return;
         }
-        res
-        .status(200)
-        .json(actorData);
+        else{
+            this.token=jwt.sign({_id:actorData._id},"12345");
+            res.status(200).json({"data":actorData,"token":this.token});
+
+        }
     });
   
 };

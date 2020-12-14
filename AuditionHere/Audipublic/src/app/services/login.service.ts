@@ -13,12 +13,12 @@ export class LoginService {
   constructor(private http:HttpClient){
 
   } 
-  postlogin(email, password){
+  postlogin(formData){
   
 
-    let formData: FormData = new FormData();
-    formData.append('userName', email);
-    formData.append('password', password);
+    // let formData: FormData = new FormData();
+    // formData.append('userName', email);
+    // formData.append('password', password);
   
     //return this.http.post(this.loginurl, formData);
      //return "loginsuccesful";

@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-free": "^5.15.1",
     "bootstrap": "^4.5.3",
     "font-awesome": "^4.7.0",
+    "joi": "^17.3.0",
     "jquery": "^3.5.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
