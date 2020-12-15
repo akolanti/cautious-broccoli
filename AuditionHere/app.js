@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('../AuditionHere/model/db');
 require('../AuditionHere/model/actorDataModel');
+require('../AuditionHere/model/auditions');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

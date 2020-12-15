@@ -1,10 +1,20 @@
 <nav class="navbar navbar-expand-md bg-dark text-light justify-content-start">
-    <div class="container text-light "><a class="navbar-nav navbar-left navbar-brand nav-link text-light bg-dark" href="/">AudiHere</a>
+    <div class="container text-light "><a class="navbar-nav navbar-left navbar-brand nav-link text-light bg-dark" routerLink="home">AudiHere</a>
         <ul class="nav mr-auto justify-content-end">
          
-            <li class="nav-item"><a class="text-light"  routerLink="register"class="nav-link" >Register</a></li>
+            <li *ngIf="signin" class="nav-item"><a  class="text-light"  routerLink="/dashboard"class="nav-link" >Dashboard</a></li>
         </ul>
-        <form class="form-inline"><input class="form-control mr-sm-2" type="search" placeholder="Search Postings" aria-label="Search"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></form>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a *ngIf="signin" class="nav-link active" routerLink="/login">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a  *ngIf="signin" class="nav-link" routerLink="/register">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a  *ngIf="!signin" class="nav-link" (click)="logout();">Logout</a>
+            </li>
+          </ul>
     </div>
 </nav>
 

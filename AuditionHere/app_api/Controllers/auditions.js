@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
-const ActorDataInstance= mongoose.model('ActorData');
+const auditionInstance= mongoose.model('Auditions');
 const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
 const token = '';
-const getActors= function(req,res,next){
-    ActorDataInstance.find().exec(
-        function(err,actorData){
+const getAudtion= function(req,res,next){
+    auditionInstance.find().exec(
+        function(err,auditions){
             if(err){
                 res
                 .status(404)
@@ -14,7 +14,7 @@ const getActors= function(req,res,next){
             }
             else{
                   
-                res.status(200).json(actorData);
+                res.status(200).json(auditions);
 
             }
 
@@ -22,42 +22,16 @@ const getActors= function(req,res,next){
     );
 };
 
-const login =  function(req,res,next)
-{
-    
-    ActorDataInstance.findOne({userName:req.body.userName})
-    .exec(function(err, actorData) {
-    if (!actorData) {
-        res
-        .status(404)
-        .json({"message":"data not found"});
-    return;
-    } 
-    else if (err) {
-        res
-        .status(404)
-        .json(err);
-        return;
-        }
-        else{
-            this.token=jwt.sign({_id:actorData._id},"12345");
-            res.status(200).json({"data":actorData,"token":this.token});
 
-        }
-    });
-  
-};
 
 const newActor=function(req,res,next){
-    
     const salt= bcrypt.genSalt(10);
     const hashed= bcrypt.hash(req.body.password,salt);
-    
 
     ActorDataInstance.create({
         userName:req.body.userName,
         firstName:req.body.firstName,
-        password:req.body.password,
+        password:hashed,
         lastName:req.body.lastName,
         actorHeight:req.body.actorHeight,
         actorWeight:req.body.actorWeight,
@@ -79,10 +53,10 @@ const newActor=function(req,res,next){
 
 };
 
-const getSingleActor = function(req,res){
+const getSingleAuditions = function(req,res){
     
-    if (req.params && req.params.actorid) {
-    ActorDataInstance.findById(req.params.actorid)
+    if (req.params && req.params.id) {
+        auditionInstance.findById(req.params.id)
 .exec(function(err, actorData) {
 if (!actorData) {
     res
@@ -187,4 +161,4 @@ const deleteActor=function(req,res,next){
 
 };
 
-module.exports={getActors,newActor,updateActor,getSingleActor,deleteActor,login};
+module.exports={getAudtion,newActor,updateActor,getSingleAuditions,deleteActor};
