@@ -26,4 +26,9 @@ export class DetailsPageComponent implements OnInit {
       console.log(newAudi);
      })
   }
+  addtocart(i)
+  {
+    console.log(this.newAudi.roles[i]);
+
+  }
 }
