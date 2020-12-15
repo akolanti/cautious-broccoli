@@ -4,30 +4,44 @@
     </div>
     <div class="card-body">
       <h5 class="card-title">{{newAudi.title}}</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <img src="/assets/{{newAudi.imageurl}}" style="width: 200px;" alt="image">
+
+      <p class="card-text">
+{{newAudi.description}}</p>
       <a routerLink="/home" class="btn btn-primary">Go Auditions</a>
     </div>
-  
-   
   </div>
  
   <div id="accordion">
     <div>
         <h3>Roles</h3>  
         </div>
-    <div class="card" *ngFor="let ad of roles;">
+    <div class="card" *ngFor="let ad of roles;index as i;">
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
-          <button class="btn btn-link" data-toggle="collapse" attr.data-target="" aria-expanded="true" aria-controls="">
+          <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#collapse' + i"aria-expanded="true" >
             {{ad.name}}
           </button>
         </h5>
       </div>
    
-      <div id="{{ad.name}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div [attr.id]="'collapse' + i" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
           {{ad.description}}
+          <div class="col-lg-12">
+
+           <p>Gender:{{ad.gender}}
+           </p>
+           <p>Age:{{ad.age}}
+          </p>
+          <p>Height:{{ad.height}}
+          </p>
+          <p>Color:{{ad.color}}
+          </p>
+          <button class="btn btn-primary add-btn" style="float: right;margin:10px;" (click)="addtocart(i)">Add to cart</button>
+         </div>
         </div>
+
       </div>
     </div>
   

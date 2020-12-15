@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DasboardComponent } from './dasboard/dasboard.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { DetailsPageComponent } from './details-page/details-page.component';
     FrameworkComponent,
     DasboardComponent,
     HomeComponent,
-    DetailsPageComponent
+    DetailsPageComponent,
+    CartComponent
     
   ],
   imports: [
@@ -37,6 +39,8 @@ import { DetailsPageComponent } from './details-page/details-page.component';
       {path: 'dashboard',component: DasboardComponent},
       {path: 'home',component: HomeComponent},
       {path: 'auditions/:id',component: DetailsPageComponent},
+      {path: 'cart',component: CartComponent},
+
 
 
 
