@@ -4,6 +4,7 @@ export class Auditions {
     title:String;
         location:String;
         type:String;
+        description:string;
         lastdate:Date;
         roles:Roles
 }

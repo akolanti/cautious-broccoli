@@ -47,7 +47,11 @@ var AuditionDataSchema= new mongoose.Schema({
         required:[true],
        
     },
-
+    description:{
+        type:String,
+        required:[true],
+       
+    },
     type:{
         type:String,
         required:[true],
