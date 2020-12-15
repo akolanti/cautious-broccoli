@@ -2,7 +2,7 @@
     <div class="container text-light "><a class="navbar-nav navbar-left navbar-brand nav-link text-light bg-dark" routerLink="home">AudiHere</a>
         <ul class="nav mr-auto justify-content-end">
          
-            <li *ngIf="signin" class="nav-item"><a  class="text-light"  routerLink="/dashboard"class="nav-link" >Dashboard</a></li>
+            <li *ngIf="!signin" class="nav-item"><a  class="text-light"  routerLink="/dashboard"class="nav-link" >Dashboard</a></li>
         </ul>
         <ul class="nav justify-content-end">
             <li class="nav-item">
