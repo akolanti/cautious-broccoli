@@ -17,13 +17,12 @@ export class DasboardComponent implements OnInit {
   title:string;
   constructor( private router: Router,private audiService: AuditionsService) {  }
   ngOnInit(): void {
-    if(localStorage.getItem('access_token')=='' && sessionStorage.getItem('access_token')=='')
+    if((localStorage.getItem('access_token')!='' || sessionStorage.getItem('access_token')!='') && (localStorage.getItem('access_token')!=null || sessionStorage.getItem('access_token')!=null))
     {
-      this.router.navigate(["/login"]);
       
     }
-    else if(localStorage.getItem('access_token')==null || sessionStorage.getItem('access_token')==null){
-      this.router.navigate(["/login"]);
+    else {
+       this.router.navigate(["/login"]);
 
     }
 this.getdata();
