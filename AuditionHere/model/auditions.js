@@ -58,6 +58,12 @@ var AuditionDataSchema= new mongoose.Schema({
        
 
     },
+    imageurl:{
+        type:String,
+        required:[true],
+       
+
+    },
     lastdate: {     type: Date,    'default': Date.now  },
     
  

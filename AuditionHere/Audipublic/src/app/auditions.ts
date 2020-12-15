@@ -6,5 +6,6 @@ export class Auditions {
         type:String;
         description:string;
         lastdate:Date;
-        roles:Roles
+        roles:Roles;
+        imageurl:string;
 }
