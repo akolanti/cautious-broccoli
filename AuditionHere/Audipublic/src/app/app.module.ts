@@ -36,7 +36,7 @@ import { DetailsPageComponent } from './details-page/details-page.component';
       {path: '',redirectTo:'/login',pathMatch:"full"},
       {path: 'dashboard',component: DasboardComponent},
       {path: 'home',component: HomeComponent},
-      {path: 'details',component: DetailsPageComponent},
+      {path: 'auditions/:id',component: DetailsPageComponent},
 
 
 

@@ -25,6 +25,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if((localStorage.getItem('access_token')!='' || sessionStorage.getItem('access_token')!='') && (localStorage.getItem('access_token')!=null || sessionStorage.getItem('access_token')!=null))
+    {
+      this.router.navigate(["/dashboard"]);
+      
+    }
+    
   this.createForm();
   }
   createForm() {
@@ -46,12 +52,16 @@ export class LoginComponent implements OnInit {
        if(res['data']['password']==data.password)
        {
           console.log(res['token']);
-         //  this.router.navigate(["/dashboard"]);
+          
             if (this.keep_login) {
                 localStorage.setItem("access_token", res["token"]);
               } else {
                 sessionStorage.setItem("access_token", res["token"]);
               }
+              window.location.reload();
+
+              this.router.navigate(["/dashboard"]);
+
        }
        else{
         this.show = !this.show;

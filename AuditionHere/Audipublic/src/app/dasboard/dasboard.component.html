@@ -14,15 +14,17 @@
     </tr>
   </thead>
   <tbody>
-    <!-- <tr *ngFor="let book of books;">
-          <td><a routerLink="/books/{{book._id}}">{{book.title}}</a></td>
-          <td><a routerLink="/books/{{book._id}}">{{book.Author}}</a></td>
-          <td><a routerLink="/books/{{book._id}}">{{book.Description}}</a></td>
-          <td>
-              <a routerLink="/edit/{{book._id}}"> <button class="btn btn-warning">Edit</button></a>&nbsp;
-              <a ><button  (click)="onDelete(book._id)" class="btn btn-danger"> Delete</button> </a></td>
+    <tr *ngFor="let ad of audi;">
+          <td><a routerLink="/auditions/{{ad._id}}">{{ad.title}}</a></td>
+          <td><a routerLink="/auditions/{{ad._id}}">{{ad.location}}</a></td>
+          <td><a routerLink="/auditions/{{ad._id}}">{{ad.type}}</a></td>
+          <td><a routerLink="/auditions/{{ad._id}}">{{ad.lastdate}}</a></td>
+
+          <!-- <td>
+              <a routerLink="/edit/{{ad._id}}"> <button class="btn btn-warning">Edit</button></a>&nbsp;
+              <a ><button  (click)="onDelete(ad._id)" class="btn btn-danger"> Delete</button> </a></td> -->
       </tr>
-     -->
+    
      
   </tbody>
 </table>

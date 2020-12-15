@@ -2,16 +2,18 @@
     <div class="container text-light "><a class="navbar-nav navbar-left navbar-brand nav-link text-light bg-dark" routerLink="home">AudiHere</a>
         <ul class="nav mr-auto justify-content-end">
          
-            <li class="nav-item"><a class="text-light"  routerLink="/dashboard"class="nav-link" >Dashboard</a></li>
+            <li *ngIf="signin" class="nav-item"><a  class="text-light"  routerLink="/dashboard"class="nav-link" >Dashboard</a></li>
         </ul>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-              <a class="nav-link active" routerLink="/login">Sign In</a>
+              <a *ngIf="signin" class="nav-link active" routerLink="/login">Sign In</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/register">Sign Up</a>
+              <a  *ngIf="signin" class="nav-link" routerLink="/register">Sign Up</a>
             </li>
-           
+            <li class="nav-item">
+              <a  *ngIf="!signin" class="nav-link" (click)="logout();">Logout</a>
+            </li>
           </ul>
     </div>
 </nav>
