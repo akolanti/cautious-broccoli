@@ -2,5 +2,62 @@ footer{
    
     bottom: 0;
     background-color: black;
+ 
 
+}
+
+nav{
+    border-bottom: 5px solid #0770b7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    margin-bottom: 0;
+
+}
+
+a,a:visited,a:hover,a:active{
+    -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+      position:relative;
+    transition:0.5s color ease;
+      text-decoration:none;
+      color:#81b3d2;
+      font-size:1em;
+  }
+  a:hover{
+	color:lightyellow;
+}
+a.before:before,a.after:after{
+    content: "";
+    transition:0.5s all ease;
+    -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+    position:absolute;
+  }
+  a.before:before{
+    top:-0.25em;
+  }
+  a.after:after{
+    bottom:-0.25em;
+  }
+  a.before:before,a.after:after{
+    height:5px;
+    height:0.35rem;
+    width:0;
+    background:lightseagreen;
+  }
+  a.sixth:before,a.sixth:after{
+    left:50%;
+    -webkit-transform:translateX(-50%);
+            transform:translateX(-50%);
+  }
+
+#title{
+    font-size: 1.5em;
+    font-family: 'Major Mono Display', monospace;
+    font-weight: 600;
+}
+hr{
+    height: 0.1em;
+    background-color:yellow;
+    
 }

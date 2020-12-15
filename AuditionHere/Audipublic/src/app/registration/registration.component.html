@@ -2,7 +2,7 @@
 <div class="wrapper fadeInDown vertical-align">
 
     <div id="formContent">
-         <form [formGroup]="ngForm"  (ngSubmit)="addactor(ngForm.value)" novalidate>
+         <form [formGroup]="ngForm"  (ngSubmit)="addactor(ngForm.value)"  novalidate>
             <div *ngIf="formError" class="alert alert-danger" role="alert">{{ formError }}</div>
             <div *ngIf="formAdded" class="alert alert-success" role="alert">{{ formAdded }}</div>
             
@@ -15,11 +15,11 @@
                 <label>Password:</label>
                 <input [(ngModel)]="newActor.password" type="password" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
                 </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>Confirm Password:</label>
                     <input [(ngModel)]="newActor.password" type="password" id="password" formControlName="password" class="fadeIn third" name="password" placeholder="Password" >
             </div> 
-            
+             -->
             <div class="form-group">
                 <label>First Name:</label>
                 <input [(ngModel)]="newActor.firstName" type="text" id="generic" formControlName="generic" class="fadeIn third" name="FirstName" placeholder="First Name" >
@@ -76,7 +76,8 @@
                             </mat-form-field>
 
                         <div style="padding: 1em;">
-                        <button class="btn btn-primary">Submit </button><a class="btn btn-danger" routerLink="">cancel</a>
+                        <button class="btn btn-primary">Submit </button>
+                        <a class="btn btn-danger" style="margin: 1em;" routerLink="">Cancel</a>
                       </div>
 
                     

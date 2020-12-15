@@ -14,7 +14,7 @@
 		<form [formGroup]="ngForm"  (ngSubmit)="onClickSubmit(ngForm.value)" novalidate>
 		  <h5>Sign In </h5>
 		  <div class="form-group">
-		    <input (keyup)="set_show()" type="email" id="login"  formControlName="userName" class="fadeIn second" name="userName" placeholder="userName Address / Username"  >
+		    <input (keyup)="set_show()" type="email" id="login"  formControlName="userName" class="fadeIn second" name="userName" placeholder="Email Address / Username"  >
 			</div>
 			<div *ngIf="ngForm.controls['userName'].invalid && (ngForm.controls['userName'].dirty || ngForm.controls['userName'].touched)" class="alert alert-danger">
 				<div *ngIf="ngForm.controls['userName'].errors.required">
